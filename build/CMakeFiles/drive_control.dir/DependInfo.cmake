@@ -4,12 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/abc418/drive/drive_control.cpp" "/home/abc418/drive/build/CMakeFiles/drive_control.dir/drive_control.cpp.o"
+  "/home/gzq/git/P3unmanned_laboratory_pipetting/drive_control.cpp" "/home/gzq/git/P3unmanned_laboratory_pipetting/build/CMakeFiles/drive_control.dir/drive_control.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../boost"
   )
 
 # Targets to which this target links.

@@ -38,7 +38,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "drive_control::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-drive_control-Debug-ca9519e5749a87a80219.json",
+					"jsonFile" : "target-drive_control-Debug-c6fc3d8b601e84f457ac.json",
 					"name" : "drive_control",
 					"projectIndex" : 0
 				}
@@ -48,8 +48,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/abc418/drive/build",
-		"source" : "/home/abc418/drive"
+		"build" : "/home/gzq/git/P3unmanned_laboratory_pipetting/build",
+		"source" : "/home/gzq/git/P3unmanned_laboratory_pipetting"
 	},
 	"version" : 
 	{
