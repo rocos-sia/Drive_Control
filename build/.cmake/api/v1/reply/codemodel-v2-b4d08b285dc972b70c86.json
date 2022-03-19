@@ -14,8 +14,7 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0,
-						1
+						0
 					]
 				}
 			],
@@ -30,8 +29,7 @@
 					"name" : "boost_serial",
 					"targetIndexes" : 
 					[
-						0,
-						1
+						0
 					]
 				}
 			],
@@ -40,15 +38,8 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "drive_control::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-drive_control-Debug-9f4c43897150fe8a99fb.json",
+					"jsonFile" : "target-drive_control-Debug-ca9519e5749a87a80219.json",
 					"name" : "drive_control",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "main::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-main-Debug-d16a663b35f61e2069e6.json",
-					"name" : "main",
 					"projectIndex" : 0
 				}
 			]
