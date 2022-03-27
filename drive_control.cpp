@@ -92,22 +92,50 @@
 //     }
 // }
 
-int main(int argc, char **argv)
+int main( int argc, char** argv )
 {
-
     boost::asio::io_service ioService;
-    boost::asio::serial_port serialPort(ioService, "/dev/ttyUSB0");
+    boost::asio::serial_port serialPort( ioService, "/dev/ttyUSB0" );
 
-    serialPort.set_option(boost::asio::serial_port::baud_rate(115200));
-    serialPort.set_option(boost::asio::serial_port::flow_control(boost::asio::serial_port::flow_control::none));
-    serialPort.set_option(boost::asio::serial_port::parity(boost::asio::serial_port::parity::none));
-    serialPort.set_option(boost::asio::serial_port::stop_bits(boost::asio::serial_port::stop_bits::one));
-    serialPort.set_option(boost::asio::serial_port::character_size(8));
+    serialPort.set_option( boost::asio::serial_port::baud_rate( 115200 ) );
+    serialPort.set_option( boost::asio::serial_port::flow_control( boost::asio::serial_port::flow_control::none ) );
+    serialPort.set_option( boost::asio::serial_port::parity( boost::asio::serial_port::parity::none ) );
+    serialPort.set_option( boost::asio::serial_port::stop_bits( boost::asio::serial_port::stop_bits::one ) );
+    serialPort.set_option( boost::asio::serial_port::character_size( 8 ) );
 
-    unsigned char sendBuffer[] = {0x55, 0XAA, 0x04, 0x01, 0x03, 0x37, 0x14, 0x05, 0X82};
-    serialPort.write_some(boost::asio::buffer(sendBuffer, sizeof(sendBuffer)));
+    unsigned char sendBuffer[] = { 0x55, 0XAA, 0x04, 0x01, 0x03, 0x37, 0x14, 0x05, 0X58 };
 
-    sleep(10);
+    int sum = 0;
+    //char sign = 1;
+    int id;
+    int a;  //新增目标位置变量
+
+    while ( 1 )
+    {
+        std::cin >> a;
+        switch ( a )
+        {
+            case 0:
+                sendBuffer[ 7 ] = { 0x00 };
+                sendBuffer[ 6 ] = { 0x00 };
+                break;
+
+            case 1:
+                sendBuffer[ 7 ] = { 0x07 };
+                sendBuffer[ 6 ] = { 0xD0 };
+                break;
+        }
+        for ( size_t i = 2; i < sizeof( sendBuffer ) - 1; i++ )
+        {
+            sum = sum + sendBuffer[ i ];
+        }
+
+        sendBuffer[ sizeof( sendBuffer ) - 1 ] = sum;
+        sum                                    = 0;
+
+        std::this_thread::sleep_for( std::chrono::milliseconds( 20 ) );
+        serialPort.write_some( boost::asio::buffer( sendBuffer, sizeof( sendBuffer ) ) );
+    }
 
     // std::thread sendThread(sendThreadRun, &serialPort);
 
