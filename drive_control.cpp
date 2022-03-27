@@ -107,6 +107,8 @@ int main(int argc, char **argv)
     unsigned char sendBuffer[] = {0x55, 0XAA, 0x04, 0x01, 0x03, 0x37, 0x14, 0x05, 0X82};
     serialPort.write_some(boost::asio::buffer(sendBuffer, sizeof(sendBuffer)));
 
+    sleep(10);
+
     // std::thread sendThread(sendThreadRun, &serialPort);
 
     // std::thread receiveThread(receiveThreadRun, &serialPort);
