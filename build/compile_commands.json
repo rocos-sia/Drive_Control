@@ -1,7 +1,7 @@
 [
 {
-  "directory": "/home/gzq/git/P3unmanned_laboratory_pipetting/build",
-  "command": "/usr/bin/g++   -I/home/gzq/git/P3unmanned_laboratory_pipetting/boost  -g   -o CMakeFiles/drive_control.dir/drive_control.cpp.o -c /home/gzq/git/P3unmanned_laboratory_pipetting/drive_control.cpp",
-  "file": "/home/gzq/git/P3unmanned_laboratory_pipetting/drive_control.cpp"
+  "directory": "/home/abc418/drive/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/abc418/drive/boost  -g   -o CMakeFiles/drive_control.dir/drive_control.cpp.o -c /home/abc418/drive/drive_control.cpp",
+  "file": "/home/abc418/drive/drive_control.cpp"
 }
 ]

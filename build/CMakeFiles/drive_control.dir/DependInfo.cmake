@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/gzq/git/P3unmanned_laboratory_pipetting/drive_control.cpp" "/home/gzq/git/P3unmanned_laboratory_pipetting/build/CMakeFiles/drive_control.dir/drive_control.cpp.o"
+  "/home/abc418/drive/drive_control.cpp" "/home/abc418/drive/build/CMakeFiles/drive_control.dir/drive_control.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

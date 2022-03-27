@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/gzq/git/P3unmanned_laboratory_pipetting
+CMAKE_SOURCE_DIR = /home/abc418/drive
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/gzq/git/P3unmanned_laboratory_pipetting/build
+CMAKE_BINARY_DIR = /home/abc418/drive/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gzq/git/P3unmanned_laboratory_pipetting/build/CMakeFiles /home/gzq/git/P3unmanned_laboratory_pipetting/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/abc418/drive/build/CMakeFiles /home/abc418/drive/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gzq/git/P3unmanned_laboratory_pipetting/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/abc418/drive/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
