@@ -92,6 +92,18 @@
 //     }
 // }
 
+//创建校验和函数
+char cheakSum(unsigned char sendBuffer)
+{
+    int sum = 0;
+    for (size_t i = 2; i < sizeof(sendBuffer); i++)
+    {
+        sum = sum + sendBuffer[i]; //提示错误：表达式必须包含指向对象的指针类型，但它具有类型“size_t”
+    }
+    sendBuffer[sizeof(sendBuffer) - 1] = sum; //提示错误：表达式必须包含指向对象的指针类型，但它具有类型“unsigened long”
+    sum = 0;
+}
+
 int main(int argc, char **argv)
 {
     boost::asio::io_service ioService;
