@@ -96,7 +96,7 @@
 void checkSum(unsigned char *sendBuffer)
 {
     int sum = 0;
-    for (size_t i = 2; i < 9; i++)
+    for (size_t i = 2; i < 8; i++)
     {
         sum = sum + sendBuffer[i];
     }
@@ -117,13 +117,13 @@ int main(int argc, char **argv)
     unsigned char sendBuffer[] = {0x55, 0XAA, 0x04, 0x02, 0x03, 0x37, 0x00, 0x00, 0X58};
     checkSum(sendBuffer);
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-    serialPort.write_some(boost::asio::buffer(sendBuffer, 9));
+    serialPort.write_some(boost::asio::buffer(sendBuffer, 8));
 
     sendBuffer[6] = {0x14};
     sendBuffer[7] = {0x05};
     checkSum(sendBuffer);
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-    serialPort.write_some(boost::asio::buffer(sendBuffer, 9));
+    serialPort.write_some(boost::asio::buffer(sendBuffer, 8));
 
     return 0;
 }
