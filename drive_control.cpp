@@ -93,7 +93,7 @@
 // }
 
 //创建校验和函数
-char checkSum(unsigned char *sendBuffer)
+void checkSum(unsigned char *sendBuffer)
 {
     int sum = 0;
     for (size_t i = 2; i < sizeof(sendBuffer); i++)
@@ -102,7 +102,6 @@ char checkSum(unsigned char *sendBuffer)
     }
     sendBuffer[sizeof(sendBuffer) - 1] = sum;
     sum = 0;
-    return sendBuffer[sizeof(sendBuffer) - 1];
 }
 
 int main(int argc, char **argv)
@@ -117,13 +116,13 @@ int main(int argc, char **argv)
     serialPort.set_option(boost::asio::serial_port::character_size(8));
 
     unsigned char sendBuffer[] = {0x55, 0XAA, 0x04, 0x02, 0x03, 0x37, 0x00, 0x00, 0X58};
-    sendBuffer[sizeof(sendBuffer) - 1] = checkSum(sendBuffer);
+    checkSum(sendBuffer);
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     serialPort.write_some(boost::asio::buffer(sendBuffer, sizeof(sendBuffer)));
 
     sendBuffer[6] = {0x14};
     sendBuffer[7] = {0x05};
-    sendBuffer[sizeof(sendBuffer) - 1] = checkSum(sendBuffer);
+    checkSum(sendBuffer);
 
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     serialPort.write_some(boost::asio::buffer(sendBuffer, sizeof(sendBuffer)));
