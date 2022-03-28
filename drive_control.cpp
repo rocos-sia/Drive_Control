@@ -93,7 +93,7 @@
 // }
 
 //创建校验和函数
-char cheakSum(unsigned char sendBuffer)
+char checkSum(unsigned char sendBuffer)
 {
     int sum = 0;
     for (size_t i = 2; i < sizeof(sendBuffer); i++)
