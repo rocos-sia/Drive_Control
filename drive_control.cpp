@@ -108,7 +108,6 @@ int main(int argc, char **argv)
 {
     boost::asio::io_service ioService;
     boost::asio::serial_port serialPort(ioService, "/dev/ttyUSB0");
-
     serialPort.set_option(boost::asio::serial_port::baud_rate(115200));
     serialPort.set_option(boost::asio::serial_port::flow_control(boost::asio::serial_port::flow_control::none));
     serialPort.set_option(boost::asio::serial_port::parity(boost::asio::serial_port::parity::none));
