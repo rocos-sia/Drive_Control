@@ -114,7 +114,31 @@ int main(int argc, char **argv)
     serialPort.set_option(boost::asio::serial_port::stop_bits(boost::asio::serial_port::stop_bits::one));
     serialPort.set_option(boost::asio::serial_port::character_size(8));
 
-    unsigned char sendBuffer[] = {0x55, 0XAA, 0x04, 0x02, 0x03, 0x37, 0x00, 0x00, 0X58};
+    unsigned char sendBuffer[] = {0x55, 0XAA, 0x04, 0x01, 0x03, 0x37, 0x00, 0x00, 0X58};
+    checkSum(sendBuffer);
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    serialPort.write_some(boost::asio::buffer(sendBuffer, 9));
+
+    sendBuffer[6] = {0x14};
+    sendBuffer[7] = {0x05};
+    checkSum(sendBuffer);
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    serialPort.write_some(boost::asio::buffer(sendBuffer, 9));
+
+    sendBuffer[6] = {0x00};
+    sendBuffer[7] = {0x00};
+    checkSum(sendBuffer);
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    serialPort.write_some(boost::asio::buffer(sendBuffer, 9));
+
+    sendBuffer[6] = {0x14};
+    sendBuffer[7] = {0x05};
+    checkSum(sendBuffer);
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    serialPort.write_some(boost::asio::buffer(sendBuffer, 9));
+
+    sendBuffer[6] = {0x00};
+    sendBuffer[7] = {0x00};
     checkSum(sendBuffer);
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     serialPort.write_some(boost::asio::buffer(sendBuffer, 9));
